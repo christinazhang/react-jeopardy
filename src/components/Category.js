@@ -6,8 +6,8 @@ import ClueCell from "./ClueCell";
 
 const Container = styled.div`
   display: flex;
+  flex: 1 0 auto;
   flex-direction: column;
-  width: 350px;
 `;
 
 const CategoryTitleContainer = styled.div`
@@ -44,9 +44,7 @@ const Category = ({ title, clues, categoryIndex }) => (
           key={index}
           clueIndex={index}
           categoryIndex={categoryIndex}
-          text={clue.text}
-          value={"$" + clue.value}
-          viewed={clue.viewed}
+          clue={clue}
         ></ClueCell>
       );
     })}

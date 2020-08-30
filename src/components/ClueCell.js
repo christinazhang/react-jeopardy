@@ -1,7 +1,8 @@
 import React from "react";
 import { connect } from "react-redux";
 import styled from "styled-components";
-import { toggleOverlay, setOverlayText, viewClue } from "../redux/actions";
+import { toggleOverlay, setActiveClue } from "../redux/actions";
+import { formatMoney } from "../util";
 
 const Clue = styled.div`
   flex: 1 0 auto;
@@ -25,30 +26,38 @@ const Clue = styled.div`
 const ClueLabel = styled.span`
   width: 100%;
   text-align: center;
-  color: #fff;
+  font-weight: 700;
+  color: yellow;
 `;
 
 class ClueCell extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = { viewed: false };
+  }
+
   handleClick = () => {
-    if (!this.props.viewed) {
-      this.props.setOverlayText(this.props.text);
+    if (!this.state.viewed) {
+      this.props.setActiveClue(this.props.clue);
       this.props.toggleOverlay(true);
-      this.props.viewClue(this.props.clueIndex, this.props.categoryIndex);
+      this.setState({ viewed: true });
     }
   };
 
   render() {
-    const { value, viewed } = this.props;
+    const { clue } = this.props;
     return (
-      <Clue onClick={this.handleClick} viewed={viewed}>
+      <Clue onClick={this.handleClick} viewed={this.state.viewed}>
         {
           // Display the value of the clue if not previously viewed
-          viewed ? "" : <ClueLabel>{value}</ClueLabel>
+          this.state.viewed ? (
+            ""
+          ) : (
+            <ClueLabel>{formatMoney(clue.value)}</ClueLabel>
+          )
         }
       </Clue>
     );
   }
 }
-export default connect(null, { toggleOverlay, setOverlayText, viewClue })(
-  ClueCell
-);
+export default connect(null, { toggleOverlay, setActiveClue })(ClueCell);

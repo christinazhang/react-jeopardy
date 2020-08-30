@@ -1,8 +1,8 @@
-import { TOGGLE_OVERLAY, SET_OVERLAY_TEXT } from "../actionTypes";
+import { TOGGLE_OVERLAY, SET_ACTIVE_CLUE } from "../actionTypes";
 
 const initialState = {
   showOverlay: false,
-  text: "",
+  activeClue: { text: "", value: 0 },
 };
 
 export default function (state = initialState, action) {
@@ -13,11 +13,14 @@ export default function (state = initialState, action) {
         ...state,
         showOverlay: showOverlay,
       };
-    case SET_OVERLAY_TEXT:
-      const { text } = action.payload;
+    case SET_ACTIVE_CLUE:
+      const { clue } = action.payload;
       return {
         ...state,
-        text: text,
+        activeClue: {
+          text: clue.text,
+          value: clue.value,
+        },
       };
     default:
       return state;

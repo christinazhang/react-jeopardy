@@ -4,7 +4,7 @@ import styled from "styled-components";
 import { toggleOverlay } from "../redux/actions";
 
 const OverlayContainer = styled.div`
-  position: fixed;
+  position: absolute;
   display: flex;
   align-items: center;
   background-color: #102278;
@@ -19,6 +19,12 @@ const OverlayContent = styled.div`
   text-align: center;
 `;
 
+const Clue = styled.div`
+  font-size: 3em;
+  font-weight: 700;
+  padding: 72px;
+`;
+
 class Overlay extends React.Component {
   handleClick = () => {
     this.props.toggleOverlay(false);
@@ -26,10 +32,10 @@ class Overlay extends React.Component {
 
   render() {
     return (
-      <OverlayContainer>
+      <OverlayContainer onClick={this.handleClick}>
         <OverlayContent>
-          <div>{this.props.overlayText}</div>
-          <button onClick={this.handleClick}>Close</button>
+          <Clue>{this.props.overlayText.toUpperCase()}</Clue>
+          (Click anywhere to close)
         </OverlayContent>
       </OverlayContainer>
     );
@@ -38,7 +44,7 @@ class Overlay extends React.Component {
 
 function mapStateToProps(state) {
   return {
-    overlayText: state.overlay.text,
+    overlayText: state.overlay.activeClue.text,
   };
 }
 

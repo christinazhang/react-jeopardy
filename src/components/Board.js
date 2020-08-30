@@ -4,13 +4,16 @@ import styled from "styled-components";
 import Category from "./Category";
 import Overlay from "./Overlay";
 import { toggleOverlay } from "../redux/actions";
+import { categories } from "../constants";
 
 const BoardContainer = styled.div`
   display: flex;
+  flex: 1 1 auto;
+  position: relative;
   flex-direction: row;
 `;
 
-const Board = ({ showOverlay, categories }) => (
+const Board = ({ showOverlay }) => (
   <BoardContainer>
     {showOverlay ? <Overlay /> : ""}
     {categories.map((category, index) => (
@@ -27,7 +30,6 @@ const Board = ({ showOverlay, categories }) => (
 function mapStateToProps(state) {
   return {
     showOverlay: state.overlay.showOverlay,
-    categories: state.clues.categories,
   };
 }
 

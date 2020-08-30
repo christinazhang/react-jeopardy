@@ -1,1 +1,1 @@
-export const getOverlayState = (store) => store.showOverlay;
+export const getAllContestants = (store) => store.contestants.contestants;

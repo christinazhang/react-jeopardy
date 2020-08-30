@@ -9,16 +9,19 @@ import {
 import styled from "styled-components";
 import "./App.css";
 import Board from "./components/Board";
+import Contestants from "./components/Contestants";
 
 const JeopardyApp = styled.div`
-  background-color: #102278;
-  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 `;
 
 function App() {
   return (
     <JeopardyApp className="App">
       <Board />
+      <Contestants />
     </JeopardyApp>
   );
 }
