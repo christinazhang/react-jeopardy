@@ -3,11 +3,11 @@ export const categories = [
     title: "Category 1",
     clues: [
       {
-        text: "Test",
+        text: "This is a test clue",
         value: 100,
       },
       {
-        text: "Test",
+        text: "This is also a test clue",
         value: 200,
       },
       {

@@ -5,11 +5,18 @@ import { toggleOverlay } from "../redux/actions";
 
 const OverlayContainer = styled.div`
   position: fixed;
-  background-color: #333;
+  display: flex;
+  align-items: center;
+  background-color: #102278;
   height: 100%;
   width: 100%;
   transition: all 0.2s;
   color: #fff;
+`;
+
+const OverlayContent = styled.div`
+  width: 100%;
+  text-align: center;
 `;
 
 class Overlay extends React.Component {
@@ -20,8 +27,10 @@ class Overlay extends React.Component {
   render() {
     return (
       <OverlayContainer>
-        <div>{this.props.overlayText}</div>
-        <button onClick={this.handleClick}>Close</button>
+        <OverlayContent>
+          <div>{this.props.overlayText}</div>
+          <button onClick={this.handleClick}>Close</button>
+        </OverlayContent>
       </OverlayContainer>
     );
   }

@@ -1,2 +1,3 @@
 export const TOGGLE_OVERLAY = "TOGGLE_OVERLAY";
 export const SET_OVERLAY_TEXT = "SET_OVERLAY_TEXT";
+export const VIEW_CLUE = "VIEW_CLUE";

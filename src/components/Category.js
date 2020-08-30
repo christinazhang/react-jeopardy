@@ -28,9 +28,6 @@ const CategoryTitleLabel = styled.span`
   font-weight: 700;
   color: #fff;
 `;
-// function titleToURL(title) {
-//   return title.toLowerCase().replace(/ /g, "-");
-// }
 
 const CategoryTitle = ({ title }) => (
   <CategoryTitleContainer>
@@ -38,15 +35,18 @@ const CategoryTitle = ({ title }) => (
   </CategoryTitleContainer>
 );
 
-const Category = ({ title, clues }) => (
+const Category = ({ title, clues, categoryIndex }) => (
   <Container>
     <CategoryTitle title={title} />
     {clues.map((clue, index) => {
       return (
         <ClueCell
           key={index}
+          clueIndex={index}
+          categoryIndex={categoryIndex}
           text={clue.text}
           value={"$" + clue.value}
+          viewed={clue.viewed}
         ></ClueCell>
       );
     })}

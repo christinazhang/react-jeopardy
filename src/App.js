@@ -10,11 +10,16 @@ import styled from "styled-components";
 import "./App.css";
 import Board from "./components/Board";
 
+const JeopardyApp = styled.div`
+  background-color: #102278;
+  height: 100vh;
+`;
+
 function App() {
   return (
-    <div className="App">
+    <JeopardyApp className="App">
       <Board />
-    </div>
+    </JeopardyApp>
   );
 }
 
