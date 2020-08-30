@@ -1,6 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
 import styled from "styled-components";
+import { toggleOverlay, setOverlayText } from "../redux/actions";
 
 const Clue = styled.div`
   flex: 1 0 auto;
@@ -15,6 +16,7 @@ const Clue = styled.div`
 
   &:hover {
     background-color: #253ca8;
+    cursor: pointer;
   }
 
   transition: all 0.2s;
@@ -26,10 +28,18 @@ const ClueLabel = styled.span`
   color: #fff;
 `;
 
-const ClueCell = ({ to, text }) => (
-  <Clue>
-    <ClueLabel>{text}</ClueLabel>
-  </Clue>
-);
+class ClueCell extends React.Component {
+  handleClick = () => {
+    this.props.setOverlayText(this.props.text);
+    this.props.toggleOverlay(true);
+  };
 
-export default ClueCell;
+  render() {
+    return (
+      <Clue onClick={this.handleClick}>
+        <ClueLabel>{this.props.value}</ClueLabel>
+      </Clue>
+    );
+  }
+}
+export default connect(null, { toggleOverlay, setOverlayText })(ClueCell);
