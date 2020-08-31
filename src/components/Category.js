@@ -8,6 +8,7 @@ const Container = styled.div`
   display: flex;
   flex: 1 0 auto;
   flex-direction: column;
+  max-width: 200px;
 `;
 
 const CategoryTitleContainer = styled.div`
