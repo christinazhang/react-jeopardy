@@ -20,7 +20,7 @@ export default function (state = initialState, action) {
           }
           return {
             ...contestant,
-            score: (contestant.score += amount),
+            score: (contestant.score += Number(amount)),
           };
         }
       );

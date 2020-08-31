@@ -41,7 +41,8 @@ export const categories = [
         },
       },
       {
-        text: "Test",
+        text:
+          "very very very very very very very very very very long test clue",
         value: 800,
       },
       {

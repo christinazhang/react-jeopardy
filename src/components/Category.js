@@ -1,5 +1,4 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import styled from "styled-components";
 import ClueCell from "./ClueCell";
@@ -9,13 +8,13 @@ const Container = styled.div`
   flex: 1 0 auto;
   flex-direction: column;
   max-width: 200px;
+  padding: 8px;
 `;
 
 const CategoryTitleContainer = styled.div`
   flex: 1 0 auto;
   color: #fff;
   background-color: #102278;
-  border: 1px solid #fff;
   padding: 8px;
   height: 100px;
   display: flex;
