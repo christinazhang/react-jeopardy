@@ -17,10 +17,7 @@ export default function (state = initialState, action) {
       const { clue } = action.payload;
       return {
         ...state,
-        activeClue: {
-          text: clue.text,
-          value: clue.value,
-        },
+        activeClue: clue,
       };
     default:
       return state;

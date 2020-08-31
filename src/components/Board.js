@@ -11,6 +11,8 @@ const BoardContainer = styled.div`
   flex: 1 1 auto;
   position: relative;
   flex-direction: row;
+  justify-content: center;
+  background-color: #102278;
 `;
 
 const Board = ({ showOverlay }) => (

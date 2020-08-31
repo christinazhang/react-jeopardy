@@ -1,3 +1,5 @@
+import { LOCAL, YOUTUBE, GOOGLE_DRIVE } from "./mediaTypes";
+
 export const contestants = [
   { name: "Contestant 1", imgLink: "https://www.w3schools.com/css/paris.jpg" },
   { name: "Contestant 2", imgLink: "https://via.placeholder.com/150" },
@@ -15,15 +17,28 @@ export const categories = [
     clues: [
       {
         text: "This is a test clue",
+        video: {
+          type: LOCAL,
+          src: "assets/VID_20180324_195422_2.mp4",
+        },
         value: 200,
       },
       {
         text: "This is also a test clue",
+        video: {
+          type: YOUTUBE,
+          src: "https://www.youtube.com/watch?v=kRXmAIHYQR4",
+        },
         value: 400,
       },
       {
         text: "Test",
         value: 600,
+        audio: {
+          type: GOOGLE_DRIVE,
+          src:
+            "https://drive.google.com/file/d/1RrFXc0OHSQ2V7VtOtXww2urmT3Xzv5ke/view?usp=sharing",
+        },
       },
       {
         text: "Test",
