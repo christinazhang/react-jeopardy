@@ -17,7 +17,7 @@ const BoardContainer = styled.div`
 
 const Board = ({ showOverlay }) => (
   <BoardContainer>
-    {showOverlay ? <Overlay /> : ""}
+    {showOverlay && <Overlay />}
     {categories.map((category, index) => (
       <Category
         key={index}

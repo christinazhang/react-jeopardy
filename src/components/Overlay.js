@@ -17,6 +17,7 @@ const OverlayContainer = styled.div`
 
 const OverlayContent = styled.div`
   width: 100%;
+  padding: 12px 120px;
   text-align: center;
 `;
 
@@ -98,7 +99,7 @@ class Overlay extends React.Component {
     return (
       <OverlayContainer onClick={this.handleClick}>
         <OverlayContent>
-          <Clue>{this.props.overlayText.toUpperCase()}</Clue>
+          <Clue>{this.props.text.toUpperCase()}</Clue>
           {this.props.video && (
             <ClueMedia>{VideoPlayer(this.props.video)}</ClueMedia>
           )}
@@ -114,7 +115,7 @@ class Overlay extends React.Component {
 
 function mapStateToProps(state) {
   return {
-    overlayText: state.overlay.activeClue.text,
+    text: state.overlay.activeClue.text,
     video: state.overlay.activeClue.video,
     audio: state.overlay.activeClue.audio,
   };
