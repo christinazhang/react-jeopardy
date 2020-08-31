@@ -8,7 +8,6 @@ const Clue = styled.div`
   flex: 1 0 auto;
 
   background-color: #102278;
-  border: 1px solid #fff;
   padding: 8px;
   height: 100px;
   display: flex;
@@ -50,11 +49,7 @@ class ClueCell extends React.Component {
       <Clue onClick={this.handleClick} viewed={this.state.viewed}>
         {
           // Display the value of the clue if not previously viewed
-          this.state.viewed ? (
-            ""
-          ) : (
-            <ClueLabel>{formatMoney(clue.value)}</ClueLabel>
-          )
+          !this.state.viewed && <ClueLabel>{formatMoney(clue.value)}</ClueLabel>
         }
       </Clue>
     );
