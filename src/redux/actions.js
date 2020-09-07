@@ -1,13 +1,18 @@
-import { TOGGLE_OVERLAY, SET_ACTIVE_CLUE, UPDATE_SCORE } from "./actionTypes";
+import {
+  TOGGLE_OVERLAY,
+  SET_ACTIVE_CLUE,
+  UPDATE_SCORE,
+  CHANGE_STAGE,
+} from "./actionTypes";
 
 export const toggleOverlay = (showOverlay) => ({
   type: TOGGLE_OVERLAY,
   payload: { showOverlay },
 });
 
-export const setActiveClue = (clue) => ({
+export const setActiveClue = (clue, value) => ({
   type: SET_ACTIVE_CLUE,
-  payload: { clue },
+  payload: { clue, value },
 });
 
 export const updateScore = (index, amount) => ({
@@ -15,6 +20,10 @@ export const updateScore = (index, amount) => ({
   payload: { index, amount },
 });
 
+export const changeStage = (stage) => ({
+  type: CHANGE_STAGE,
+  payload: { stage },
+});
 // export const viewClue = (row, col) => ({
 //   type: VIEW_CLUE,
 //   payload: { row, col },

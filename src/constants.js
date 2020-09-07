@@ -17,7 +17,6 @@ export const categories = [
     clues: [
       {
         text: "This is a test clue",
-        value: 200,
       },
       {
         text: "This is also a test clue",
@@ -25,11 +24,9 @@ export const categories = [
           type: YOUTUBE,
           src: "https://www.youtube.com/watch?v=kRXmAIHYQR4",
         },
-        value: 400,
       },
       {
         text: "Test",
-        value: 600,
         audio: {
           type: GOOGLE_DRIVE,
           src:
@@ -39,11 +36,9 @@ export const categories = [
       {
         text:
           "very very very very very very very very very very long test clue",
-        value: 800,
       },
       {
         text: "Test",
-        value: 1000,
       },
     ],
   },
@@ -52,23 +47,18 @@ export const categories = [
     clues: [
       {
         text: "Test",
-        value: 200,
       },
       {
         text: "Test",
-        value: 400,
       },
       {
         text: "Test",
-        value: 600,
       },
       {
         text: "Test",
-        value: 800,
       },
       {
         text: "Test",
-        value: 1000,
       },
     ],
   },
@@ -77,23 +67,18 @@ export const categories = [
     clues: [
       {
         text: "Test",
-        value: 200,
       },
       {
         text: "Test",
-        value: 400,
       },
       {
         text: "Test",
-        value: 600,
       },
       {
         text: "Test",
-        value: 800,
       },
       {
         text: "Test",
-        value: 1000,
       },
     ],
   },
@@ -102,23 +87,18 @@ export const categories = [
     clues: [
       {
         text: "Test",
-        value: 200,
       },
       {
         text: "Test",
-        value: 400,
       },
       {
         text: "Test",
-        value: 600,
       },
       {
         text: "Test",
-        value: 800,
       },
       {
         text: "Test",
-        value: 1000,
       },
     ],
   },
@@ -127,23 +107,18 @@ export const categories = [
     clues: [
       {
         text: "Test",
-        value: 200,
       },
       {
         text: "Test",
-        value: 400,
       },
       {
         text: "Test",
-        value: 600,
       },
       {
         text: "Test",
-        value: 800,
       },
       {
         text: "Test",
-        value: 1000,
       },
     ],
   },

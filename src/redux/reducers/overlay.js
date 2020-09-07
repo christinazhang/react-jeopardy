@@ -14,10 +14,13 @@ export default function (state = initialState, action) {
         showOverlay: showOverlay,
       };
     case SET_ACTIVE_CLUE:
-      const { clue } = action.payload;
+      const { clue, value } = action.payload;
       return {
         ...state,
-        activeClue: clue,
+        activeClue: {
+          ...clue,
+          value: value,
+        },
       };
     default:
       return state;
