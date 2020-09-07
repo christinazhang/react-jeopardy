@@ -32,7 +32,10 @@
           }
         },
         {
-          "text": "very very very very very very very very very very long test clue"
+          "text": "very very very very very very very very very very long test clue",
+          "image": {
+            "src": "https://pbs.twimg.com/media/EhMiIA0WAAACuJU?format=jpg&name=medium"
+          }
         },
         {
           "text": "Test"

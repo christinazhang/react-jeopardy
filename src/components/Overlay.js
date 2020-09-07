@@ -31,6 +31,12 @@ const ClueMedia = styled.div`
   margin-bottom: 72px;
 `;
 
+const ImageContainer = styled.img`
+  max-width: 560px;
+  max-height: 315px;
+  object-fit: cover;
+`;
+
 function VideoPlayer(videoModel) {
   switch (videoModel.type) {
     case LOCAL:
@@ -106,6 +112,11 @@ class Overlay extends React.Component {
           {this.props.audio && (
             <ClueMedia>{AudioPlayer(this.props.audio)}</ClueMedia>
           )}
+          {this.props.image && (
+            <ClueMedia>
+              {<ImageContainer src={this.props.image.src} alt="clue" />}
+            </ClueMedia>
+          )}
           (Click anywhere to close)
         </OverlayContent>
       </OverlayContainer>
@@ -118,6 +129,7 @@ function mapStateToProps(state) {
     text: state.overlay.activeClue.text,
     video: state.overlay.activeClue.video,
     audio: state.overlay.activeClue.audio,
+    image: state.overlay.activeClue.image,
   };
 }
 
