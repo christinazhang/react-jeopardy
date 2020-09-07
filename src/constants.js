@@ -17,10 +17,6 @@ export const categories = [
     clues: [
       {
         text: "This is a test clue",
-        video: {
-          type: LOCAL,
-          src: "assets/VID_20180324_195422_2.mp4",
-        },
         value: 200,
       },
       {
