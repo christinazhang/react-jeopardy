@@ -13,6 +13,8 @@ import {
 import "./App.css";
 import Board from "./components/Board";
 import Contestants from "./components/Contestants";
+import SingleJeopardyButton from "./components/SingleJeopardyButton";
+import DoubleJeopardyButton from "./components/DoubleJeopardyButton";
 import { changeStage, uploadConfig } from "./redux/actions";
 import { getCurrentStage } from "./redux/selectors";
 import { UPLOAD_FILES, SINGLE_JEOPARDY } from "./stageTypes";
@@ -44,6 +46,10 @@ const DropArea = styled.div`
 const ActiveGame = (
   <JeopardyApp className="App">
     <Board />
+    <div>
+      <SingleJeopardyButton></SingleJeopardyButton>
+      <DoubleJeopardyButton></DoubleJeopardyButton>
+    </div>
     <Contestants />
   </JeopardyApp>
 );

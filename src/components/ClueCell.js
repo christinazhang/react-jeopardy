@@ -34,14 +34,18 @@ const ClueLabel = styled.span`
 class ClueCell extends React.Component {
   constructor(props) {
     super(props);
-    const multiplier = this.props.stage === SINGLE_JEOPARDY ? 1 : 2;
-    const clueValue = (this.props.clueIndex + 1) * 200 * multiplier;
-    this.state = { viewed: false, clueValue: clueValue };
+    this.state = { viewed: false };
+  }
+
+  getClueValue() {
+    const { stage, clueIndex } = this.props;
+    const multiplier = stage === SINGLE_JEOPARDY ? 1 : 2;
+    return (clueIndex + 1) * 200 * multiplier;
   }
 
   handleClick = () => {
     if (!this.state.viewed) {
-      this.props.setActiveClue(this.props.clue, this.state.clueValue);
+      this.props.setActiveClue(this.props.clue, this.getClueValue());
       this.props.toggleOverlay(true);
       this.setState({ viewed: true });
     }
@@ -53,7 +57,7 @@ class ClueCell extends React.Component {
         {
           // Display the value of the clue if not previously viewed
           !this.state.viewed && (
-            <ClueLabel>{formatMoney(this.state.clueValue)}</ClueLabel>
+            <ClueLabel>{formatMoney(this.getClueValue())}</ClueLabel>
           )
         }
       </Clue>
