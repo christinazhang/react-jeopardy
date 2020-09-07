@@ -1,7 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
 import styled from "styled-components";
-import { toggleOverlay, setActiveClue } from "../redux/actions";
+import { toggleOverlay, setActiveClue, setClueViewed } from "../redux/actions";
 import { getCurrentStage } from "../redux/selectors";
 import { formatMoney } from "../util";
 import { SINGLE_JEOPARDY } from "../stageTypes";
@@ -32,11 +32,6 @@ const ClueLabel = styled.span`
 `;
 
 class ClueCell extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = { viewed: false };
-  }
-
   getClueValue() {
     const { stage, clueIndex } = this.props;
     const multiplier = stage === SINGLE_JEOPARDY ? 1 : 2;
@@ -44,21 +39,21 @@ class ClueCell extends React.Component {
   }
 
   handleClick = () => {
-    if (!this.state.viewed) {
-      this.props.setActiveClue(this.props.clue, this.getClueValue());
+    const { clue, clueIndex, categoryIndex } = this.props;
+    if (!this.props.clue.viewed) {
+      this.props.setActiveClue(clue, this.getClueValue());
+      this.props.setClueViewed(categoryIndex, clueIndex);
       this.props.toggleOverlay(true);
-      this.setState({ viewed: true });
     }
   };
 
   render() {
+    let viewed = this.props.clue.viewed;
     return (
-      <Clue onClick={this.handleClick} viewed={this.state.viewed}>
+      <Clue onClick={this.handleClick} viewed={viewed}>
         {
           // Display the value of the clue if not previously viewed
-          !this.state.viewed && (
-            <ClueLabel>{formatMoney(this.getClueValue())}</ClueLabel>
-          )
+          !viewed && <ClueLabel>{formatMoney(this.getClueValue())}</ClueLabel>
         }
       </Clue>
     );
@@ -71,6 +66,8 @@ function mapStateToProps(state) {
   };
 }
 
-export default connect(mapStateToProps, { toggleOverlay, setActiveClue })(
-  ClueCell
-);
+export default connect(mapStateToProps, {
+  toggleOverlay,
+  setActiveClue,
+  setClueViewed,
+})(ClueCell);

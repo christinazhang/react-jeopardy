@@ -4,6 +4,7 @@ import {
   UPDATE_SCORE,
   CHANGE_STAGE,
   UPLOAD_CONFIG,
+  SET_CLUE_VIEWED,
 } from "./actionTypes";
 
 export const toggleOverlay = (showOverlay) => ({
@@ -30,7 +31,7 @@ export const uploadConfig = (config) => ({
   payload: { config },
 });
 
-// export const viewClue = (row, col) => ({
-//   type: VIEW_CLUE,
-//   payload: { row, col },
-// });
+export const setClueViewed = (categoryIndex, clueIndex) => ({
+  type: SET_CLUE_VIEWED,
+  payload: { categoryIndex, clueIndex },
+});

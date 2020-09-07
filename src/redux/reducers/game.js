@@ -1,5 +1,10 @@
-import { UPLOAD_FILES } from "../../stageTypes";
-import { CHANGE_STAGE, UPLOAD_CONFIG, UPDATE_SCORE } from "../actionTypes";
+import { UPLOAD_FILES, SINGLE_JEOPARDY } from "../../stageTypes";
+import {
+  CHANGE_STAGE,
+  UPLOAD_CONFIG,
+  UPDATE_SCORE,
+  SET_CLUE_VIEWED,
+} from "../actionTypes";
 
 const initialState = {
   currentStage: UPLOAD_FILES,
@@ -7,6 +12,19 @@ const initialState = {
   singleJeopardyCategories: [],
   doubleJeopardyCategories: [],
 };
+
+const updateClueViewed = (categories, categoryIndex, clueIndex) =>
+  categories.map((category, currentCategoryIndex) => {
+    if (currentCategoryIndex !== categoryIndex) return category;
+    const updatedClues = category.clues.map((clue, currentClueIndex) => {
+      if (currentClueIndex !== clueIndex) return clue;
+      return { ...clue, viewed: true };
+    });
+    return {
+      ...category,
+      clues: updatedClues,
+    };
+  });
 
 export default function (state = initialState, action) {
   switch (action.type) {
@@ -29,9 +47,7 @@ export default function (state = initialState, action) {
       const { index, amount } = action.payload;
       const updatedContestants = state.contestants.map(
         (contestant, contestantIndex) => {
-          if (index !== contestantIndex) {
-            return contestant;
-          }
+          if (index !== contestantIndex) return contestant;
           const currentScore = contestant.score ?? 0;
           return {
             ...contestant,
@@ -42,6 +58,27 @@ export default function (state = initialState, action) {
       return {
         ...state,
         contestants: updatedContestants,
+      };
+
+    case SET_CLUE_VIEWED:
+      const { categoryIndex, clueIndex } = action.payload;
+      if (state.currentStage === SINGLE_JEOPARDY) {
+        return {
+          ...state,
+          singleJeopardyCategories: updateClueViewed(
+            state.singleJeopardyCategories,
+            categoryIndex,
+            clueIndex
+          ),
+        };
+      }
+      return {
+        ...state,
+        doubleJeopardyCategories: updateClueViewed(
+          state.doubleJeopardyCategories,
+          categoryIndex,
+          clueIndex
+        ),
       };
     default:
       return state;
