@@ -52,6 +52,3 @@ const Category = ({ title, clues, categoryIndex }) => (
 );
 
 export default Category;
-
-// <Link to={"/" + categoryIndex + "/" + index} key={index}>
-//         </Link>

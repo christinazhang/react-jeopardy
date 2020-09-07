@@ -99,6 +99,7 @@ class ContestantCell extends React.Component {
           <WagerEditor>
             Wager Clue:
             <input
+              style={{ display: "block", margin: "0 auto" }}
               placeholder="Wager Amount"
               type="number"
               onChange={(e) => this.updateWager(e.target.value)}
