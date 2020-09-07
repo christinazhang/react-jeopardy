@@ -4,7 +4,7 @@ import {
   FINAL_JEOPARDY,
 } from "../stageTypes";
 
-export const getAllContestants = (store) => store.contestants.contestants;
+export const getAllContestants = (store) => store.game.contestants;
 export const getCurrentStage = (store) => store.game.currentStage;
 export const getCurrentCategories = (store) => {
   switch (getCurrentStage(store)) {

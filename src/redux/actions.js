@@ -3,6 +3,7 @@ import {
   SET_ACTIVE_CLUE,
   UPDATE_SCORE,
   CHANGE_STAGE,
+  UPLOAD_CONFIG,
 } from "./actionTypes";
 
 export const toggleOverlay = (showOverlay) => ({
@@ -24,6 +25,11 @@ export const changeStage = (stage) => ({
   type: CHANGE_STAGE,
   payload: { stage },
 });
+export const uploadConfig = (config) => ({
+  type: UPLOAD_CONFIG,
+  payload: { config },
+});
+
 // export const viewClue = (row, col) => ({
 //   type: VIEW_CLUE,
 //   payload: { row, col },

@@ -1,12 +1,9 @@
 import { UPLOAD_FILES } from "../../stageTypes";
-import {
-  CHANGE_STAGE,
-  UPLOAD_SINGLE_JEOPARDY,
-  UPLOAD_DOUBLE_JEOPARDY,
-} from "../actionTypes";
+import { CHANGE_STAGE, UPLOAD_CONFIG, UPDATE_SCORE } from "../actionTypes";
 
 const initialState = {
   currentStage: UPLOAD_FILES,
+  contestants: [],
   singleJeopardyCategories: [],
   doubleJeopardyCategories: [],
 };
@@ -19,17 +16,32 @@ export default function (state = initialState, action) {
         ...state,
         currentStage: stage,
       };
-    case UPLOAD_SINGLE_JEOPARDY:
-      const { singleJeopardyCategories } = action.payload;
+    case UPLOAD_CONFIG:
+      const { config } = action.payload;
       return {
         ...state,
-        singleJeopardyCategories: singleJeopardyCategories,
+        contestants: config.contestants,
+        singleJeopardyCategories: config.singleJeopardy,
+        doubleJeopardyCategories: config.doubleJeopardy,
       };
-    case UPLOAD_DOUBLE_JEOPARDY:
-      const { doubleJeopardyCategories } = action.payload;
+
+    case UPDATE_SCORE:
+      const { index, amount } = action.payload;
+      const updatedContestants = state.contestants.map(
+        (contestant, contestantIndex) => {
+          if (index !== contestantIndex) {
+            return contestant;
+          }
+          const currentScore = contestant.score ?? 0;
+          return {
+            ...contestant,
+            score: currentScore + Number(amount),
+          };
+        }
+      );
       return {
         ...state,
-        doubleJeopardyCategories: doubleJeopardyCategories,
+        contestants: updatedContestants,
       };
     default:
       return state;

@@ -73,12 +73,11 @@ class ContestantCell extends React.Component {
 
   render() {
     const { contestant } = this.props;
+    const score = contestant.score ?? 0;
     return (
       <Container>
         <DisplayPicture src={contestant.imgLink}></DisplayPicture>
-        <ScoreLabel score={contestant.score}>
-          {formatMoney(contestant.score)}
-        </ScoreLabel>
+        <ScoreLabel score={score}>{formatMoney(score)}</ScoreLabel>
         <Name>{contestant.name}</Name>
         <ScoreEditor>
           <SimpleScoreEditor>
