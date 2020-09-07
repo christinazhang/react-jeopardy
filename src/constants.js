@@ -123,3 +123,116 @@ export const categories = [
     ],
   },
 ];
+
+export const categories2 = [
+  {
+    title: "Category 1",
+    clues: [
+      {
+        text: "This is a test clue",
+      },
+      {
+        text: "This is also a test clue",
+        video: {
+          type: YOUTUBE,
+          src: "https://www.youtube.com/watch?v=kRXmAIHYQR4",
+        },
+      },
+      {
+        text: "Test",
+        audio: {
+          type: GOOGLE_DRIVE,
+          src:
+            "https://drive.google.com/file/d/1RrFXc0OHSQ2V7VtOtXww2urmT3Xzv5ke/view?usp=sharing",
+        },
+      },
+      {
+        text:
+          "very very very very very very very very very very long test clue",
+      },
+      {
+        text: "Test",
+      },
+    ],
+  },
+  {
+    title: "Category 2",
+    clues: [
+      {
+        text: "Test",
+      },
+      {
+        text: "Test",
+      },
+      {
+        text: "Test",
+      },
+      {
+        text: "Test",
+      },
+      {
+        text: "Test",
+      },
+    ],
+  },
+  {
+    title: "Category 3",
+    clues: [
+      {
+        text: "Test",
+      },
+      {
+        text: "Test",
+      },
+      {
+        text: "Test",
+      },
+      {
+        text: "Test",
+      },
+      {
+        text: "Test",
+      },
+    ],
+  },
+  {
+    title: "Category 4",
+    clues: [
+      {
+        text: "Test",
+      },
+      {
+        text: "Test",
+      },
+      {
+        text: "Test",
+      },
+      {
+        text: "Test",
+      },
+      {
+        text: "Test",
+      },
+    ],
+  },
+  {
+    title: "Category 5",
+    clues: [
+      {
+        text: "Test",
+      },
+      {
+        text: "Test",
+      },
+      {
+        text: "Test",
+      },
+      {
+        text: "Test",
+      },
+      {
+        text: "Test",
+      },
+    ],
+  },
+];

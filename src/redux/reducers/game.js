@@ -1,8 +1,14 @@
-import { SINGLE_JEOPARDY } from "../../stageTypes";
-import { CHANGE_STAGE } from "../actionTypes";
+import { UPLOAD_FILES } from "../../stageTypes";
+import {
+  CHANGE_STAGE,
+  UPLOAD_SINGLE_JEOPARDY,
+  UPLOAD_DOUBLE_JEOPARDY,
+} from "../actionTypes";
 
 const initialState = {
-  currentStage: SINGLE_JEOPARDY,
+  currentStage: UPLOAD_FILES,
+  singleJeopardyCategories: [],
+  doubleJeopardyCategories: [],
 };
 
 export default function (state = initialState, action) {
@@ -12,6 +18,18 @@ export default function (state = initialState, action) {
       return {
         ...state,
         currentStage: stage,
+      };
+    case UPLOAD_SINGLE_JEOPARDY:
+      const { singleJeopardyCategories } = action.payload;
+      return {
+        ...state,
+        singleJeopardyCategories: singleJeopardyCategories,
+      };
+    case UPLOAD_DOUBLE_JEOPARDY:
+      const { doubleJeopardyCategories } = action.payload;
+      return {
+        ...state,
+        doubleJeopardyCategories: doubleJeopardyCategories,
       };
     default:
       return state;
