@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import styled from "styled-components";
 
 const Icon = styled(FontAwesomeIcon)`
-  color: ${(props) => props.iconColor};
+  color: ${(props) => props.iconcolor};
   margin-left: ${(props) => (props.text ? "8px" : "0px")};
 `;
 
@@ -18,16 +18,16 @@ const IconButtonContainer = styled.div`
 `;
 
 const IconText = styled.div`
-  color: ${(props) => props.textColor};
+  color: ${(props) => props.textcolor};
 `;
 
 class IconButton extends React.Component {
   render() {
-    const { text, textColor, size, icon, iconColor, onClick } = this.props;
+    const { text, textcolor, size, icon, iconcolor, onClick } = this.props;
     return (
       <IconButtonContainer onClick={onClick}>
-        {text ?? <IconText textColor={textColor}>{text}</IconText>}
-        <Icon iconColor={iconColor} size={size} icon={icon} text={text} />
+        {text ?? <IconText textcolor={textcolor}>{text}</IconText>}
+        <Icon iconcolor={iconcolor} size={size} icon={icon} text={text} />
       </IconButtonContainer>
     );
   }

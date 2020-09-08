@@ -11,9 +11,9 @@ class DoubleJeopardyButton extends React.Component {
       <IconButton
         onClick={this.handleClick}
         icon="chevron-circle-right"
-        iconColor="#fff"
+        iconcolor="#fff"
         text="Double Jeopardy!"
-        textColor="#fff"
+        textcolor="#fff"
       />
     );
   }

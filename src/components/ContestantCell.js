@@ -119,13 +119,13 @@ class ContestantCell extends React.Component {
           <div>
             <IconButton
               icon="times-circle"
-              iconColor="red"
+              iconcolor="red"
               size="lg"
               onClick={this.handleScoreDecrease}
             />
             <IconButton
               icon="check-circle"
-              iconColor="green"
+              iconcolor="green"
               size="lg"
               onClick={this.handleScoreIncrease}
             />

@@ -37,6 +37,7 @@ const setDailyDoubles = (number, categories) => {
     }
     dailyDoubleCoordinates.push(coordinates);
   }
+  console.log(dailyDoubleCoordinates);
   dailyDoubleCoordinates.forEach((coordinate) => {
     const { categoryIndex, clueIndex } = coordinate;
     result[categoryIndex].clues[clueIndex].isDailyDouble = true;

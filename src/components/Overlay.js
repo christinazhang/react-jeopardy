@@ -16,16 +16,20 @@ const OverlayContainer = styled.div`
 `;
 
 const OverlayContent = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
   width: 100%;
   padding: 12px 120px;
   text-align: center;
 `;
 
 const Clue = styled.div`
-  font-size: 3em;
-  font-weight: 700;
+  font-size: 3.5em;
   margin-bottom: 72px;
-  font-family: "ITC Korinna", serif;
+  max-width: 800px;
+  font-family: ${(props) => props.font ?? "ITC Korinna"};
   text-shadow: 4px 4px #000;
 `;
 
@@ -38,6 +42,32 @@ const ImageContainer = styled.img`
   max-height: 315px;
   object-fit: cover;
 `;
+
+const DailyDoubleLabel = styled.div`
+  font-family: "Steile Futura BQ";
+  font-size: 8em;
+  line-height: 0.9;
+  margin-bottom: 72px;
+`;
+
+const DailyDouble = (
+  <DailyDoubleLabel>
+    <div>DAILY</div>
+    <div>DOUBLE</div>
+  </DailyDoubleLabel>
+);
+
+const FinalJeopardyLabel = styled.div`
+  font-family: "Swiss 911 Compressed";
+  font-size: 8em;
+  line-height: 0.9;
+  margin-bottom: 72px;
+  max-width: 800px;
+`;
+
+const FinalJeopardy = (category) => (
+  <FinalJeopardyLabel>{category.toUpperCase()}</FinalJeopardyLabel>
+);
 
 function VideoPlayer(videoModel) {
   switch (videoModel.type) {
@@ -98,9 +128,10 @@ function AudioPlayer(audioModel) {
   }
 }
 
-const ClueContent = ({ text, image, video, audio }) => (
+const ClueContent = ({ text, image, video, audio, font, component }) => (
   <div>
-    <Clue>{text.toUpperCase()}</Clue>
+    {text && <Clue font={font}>{text.toUpperCase()}</Clue>}
+    {component && component}
     {video && <ClueMedia>{VideoPlayer(video)}</ClueMedia>}
     {audio && <ClueMedia>{AudioPlayer(audio)}</ClueMedia>}
     {image && (
@@ -108,16 +139,15 @@ const ClueContent = ({ text, image, video, audio }) => (
     )}
   </div>
 );
-
 class Overlay extends React.Component {
   constructor(props) {
     super(props);
     let overlays = [];
     if (this.props.isDailyDouble) {
-      overlays.push({ text: "Daily Double" });
+      overlays.push({ component: DailyDouble });
     }
     if (this.props.isFinalJeopardy) {
-      overlays.push({ text: this.props.category });
+      overlays.push({ component: FinalJeopardy(this.props.category) });
     }
     overlays.push({ ...this.props });
     this.state = { overlays: overlays, activeOverlayIndex: 0 };
