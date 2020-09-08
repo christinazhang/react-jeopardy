@@ -8,19 +8,21 @@ import {
   faMinusCircle,
   faCheckCircle,
   faTimesCircle,
+  faChevronCircleRight,
 } from "@fortawesome/free-solid-svg-icons";
-
-import "./App.css";
 import Board from "./components/Board";
 import Contestants from "./components/Contestants";
-import SingleJeopardyButton from "./components/SingleJeopardyButton";
-import DoubleJeopardyButton from "./components/DoubleJeopardyButton";
-import FinalJeopardyButton from "./components/FinalJeopardyButton";
 import { changeStage, uploadConfig } from "./redux/actions";
 import { getCurrentStage } from "./redux/selectors";
 import { UPLOAD_FILES, SINGLE_JEOPARDY } from "./stageTypes";
 
-library.add(faPlusCircle, faMinusCircle, faCheckCircle, faTimesCircle);
+library.add(
+  faPlusCircle,
+  faMinusCircle,
+  faCheckCircle,
+  faTimesCircle,
+  faChevronCircleRight
+);
 
 const JeopardyApp = styled.div`
   display: flex;
@@ -45,13 +47,8 @@ const DropArea = styled.div`
 `;
 
 const ActiveGame = (
-  <JeopardyApp className="App">
+  <JeopardyApp>
     <Board />
-    <div>
-      <SingleJeopardyButton></SingleJeopardyButton>
-      <DoubleJeopardyButton></DoubleJeopardyButton>
-      <FinalJeopardyButton></FinalJeopardyButton>
-    </div>
     <Contestants />
   </JeopardyApp>
 );

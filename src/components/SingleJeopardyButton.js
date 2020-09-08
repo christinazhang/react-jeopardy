@@ -1,13 +1,21 @@
 import React from "react";
-import styled from "styled-components";
 import { connect } from "react-redux";
 import { changeStage } from "../redux/actions";
 import { SINGLE_JEOPARDY } from "../stageTypes";
+import IconButton from "./IconButton";
 
 class SingleJeopardyButton extends React.Component {
   handleClick = () => this.props.changeStage(SINGLE_JEOPARDY);
   render() {
-    return <button onClick={this.handleClick}>Jeopardy!</button>;
+    return (
+      <IconButton
+        onClick={this.handleClick}
+        icon="chevron-circle-right"
+        iconColor="#fff"
+        text="Jeopardy!"
+        textColor="#fff"
+      />
+    );
   }
 }
 

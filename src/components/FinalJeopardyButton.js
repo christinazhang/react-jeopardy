@@ -1,8 +1,8 @@
 import React from "react";
-import styled from "styled-components";
 import { connect } from "react-redux";
 import { changeStage, setActiveClue, toggleOverlay } from "../redux/actions";
 import { FINAL_JEOPARDY } from "../stageTypes";
+import IconButton from "./IconButton";
 
 class FinalJeopardyButton extends React.Component {
   handleClick = () => {
@@ -11,7 +11,15 @@ class FinalJeopardyButton extends React.Component {
     this.props.toggleOverlay(true);
   };
   render() {
-    return <button onClick={this.handleClick}>Final Jeopardy</button>;
+    return (
+      <IconButton
+        onClick={this.handleClick}
+        icon="chevron-circle-right"
+        iconColor="#fff"
+        text="Final Jeopardy!"
+        textColor="#fff"
+      />
+    );
   }
 }
 

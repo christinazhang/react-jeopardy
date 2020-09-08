@@ -10,6 +10,7 @@ const Container = styled.div`
   flex-direction: column;
   width: 200px;
   margin: 8px;
+  text-align: center;
 `;
 
 const ScoreLabel = styled.div`
@@ -84,13 +85,13 @@ class ContestantCell extends React.Component {
             <div>Regular Clue:</div>
             <IconButton
               icon="times-circle"
-              color="red"
+              iconColor="red"
               size="lg"
               onClick={this.handleScoreDecrease}
             />
             <IconButton
               icon="check-circle"
-              color="green"
+              iconColor="green"
               size="lg"
               onClick={this.handleScoreIncrease}
             />
@@ -105,13 +106,13 @@ class ContestantCell extends React.Component {
             />
             <IconButton
               icon="times-circle"
-              color="red"
+              iconColor="red"
               size="lg"
               onClick={this.handleIncorrectWager}
             />
             <IconButton
               icon="check-circle"
-              color="green"
+              iconColor="green"
               size="lg"
               onClick={this.handleCorrectWager}
             />
