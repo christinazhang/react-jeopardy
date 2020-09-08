@@ -2,30 +2,37 @@ import React from "react";
 import styled from "styled-components";
 import ClueCell from "./ClueCell";
 
-const Container = styled.div`
-  display: flex;
-  flex: 1 0 auto;
-  flex-direction: column;
-  max-width: 200px;
-  padding: 8px;
-`;
-
 const CategoryTitleContainer = styled.div`
   flex: 1 0 auto;
+  border-bottom: 8px solid rgba(0, 0, 0, 0.75);
   color: #fff;
   background-color: #102278;
-  padding: 8px;
+  padding: 8px 12px;
   height: 100px;
   display: flex;
   align-items: center;
   font-size: 2em;
 `;
 
+const Container = styled.div`
+  display: flex;
+  flex: 1 0 auto;
+  flex-direction: column;
+  min-width: 200px;
+  max-width: 250px;
+  border: 8px solid rgba(0, 0, 0, 0.75);
+  border-right: 0px;
+  &:last-child {
+    border-right: 8px solid rgba(0, 0, 0, 0.75);
+  }
+`;
+
 const CategoryTitleLabel = styled.span`
   width: 100%;
   text-align: center;
-  font-weight: 700;
+  font-family: "Swiss 911 Compressed";
   color: #fff;
+  text-shadow: 0px 0px 8px rgba(0, 0, 0, 0.7);
 `;
 
 const CategoryTitle = ({ title }) => (

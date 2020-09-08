@@ -19,12 +19,16 @@ const ScoreLabel = styled.div`
   color: ${(props) => (props.score >= 0 ? "white" : "red")};
   font-weight: 700;
   font-size: 2em;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+  border: 8px solid rgba(0, 0, 0, 0.75);
 `;
 
 const Name = styled.div`
   padding: 48px 12px;
   background-color: #102278;
   color: white;
+  border: 8px solid rgba(0, 0, 0, 0.75);
+  border-top: 0px;
 `;
 
 const DisplayPicture = styled.img`

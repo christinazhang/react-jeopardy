@@ -3,12 +3,12 @@ import { connect } from "react-redux";
 import styled from "styled-components";
 import { toggleOverlay, setActiveClue, setClueViewed } from "../redux/actions";
 import { getCurrentStage } from "../redux/selectors";
-import { formatMoney } from "../util";
 import { SINGLE_JEOPARDY } from "../stageTypes";
 
 const Clue = styled.div`
   flex: 1 0 auto;
 
+  border-top: 8px solid rgba(0, 0, 0, 0.75);
   background-color: #102278;
   padding: 8px;
   height: 100px;
@@ -27,8 +27,11 @@ const Clue = styled.div`
 const ClueLabel = styled.span`
   width: 100%;
   text-align: center;
-  font-weight: 700;
-  color: yellow;
+  color: #f8a94b;
+  font-family: "Swiss 911 Ultra Compressed";
+  font-size: 1.5em;
+  letter-spacing: 2px;
+  text-shadow: 4px 4px #000;
 `;
 
 class ClueCell extends React.Component {
@@ -53,7 +56,7 @@ class ClueCell extends React.Component {
       <Clue onClick={this.handleClick} viewed={viewed}>
         {
           // Display the value of the clue if not previously viewed
-          !viewed && <ClueLabel>{formatMoney(this.getClueValue())}</ClueLabel>
+          !viewed && <ClueLabel>{"$" + this.getClueValue()}</ClueLabel>
         }
       </Clue>
     );

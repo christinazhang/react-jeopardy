@@ -15,6 +15,7 @@ import Contestants from "./components/Contestants";
 import { changeStage, uploadConfig } from "./redux/actions";
 import { getCurrentStage } from "./redux/selectors";
 import { UPLOAD_FILES, SINGLE_JEOPARDY } from "./stageTypes";
+import GlobalFonts from "./fonts/fonts";
 
 library.add(
   faPlusCircle,
@@ -86,9 +87,14 @@ const UploadFiles = (changeStage, uploadConfig) => (
 );
 
 const App = ({ currentStage, changeStage, uploadConfig }) => {
-  return currentStage === UPLOAD_FILES
-    ? UploadFiles(changeStage, uploadConfig)
-    : ActiveGame;
+  return (
+    <div>
+      <GlobalFonts />
+      {currentStage === UPLOAD_FILES
+        ? UploadFiles(changeStage, uploadConfig)
+        : ActiveGame}
+    </div>
+  );
 };
 
 function mapStateToProps(state) {

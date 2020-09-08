@@ -25,6 +25,8 @@ const Clue = styled.div`
   font-size: 3em;
   font-weight: 700;
   margin-bottom: 72px;
+  font-family: "ITC Korinna", serif;
+  text-shadow: 4px 4px #000;
 `;
 
 const ClueMedia = styled.div`
