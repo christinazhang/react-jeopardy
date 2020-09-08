@@ -7,7 +7,7 @@ import { DOUBLE_JEOPARDY } from "../stageTypes";
 class DoubleJeopardyButton extends React.Component {
   handleClick = () => this.props.changeStage(DOUBLE_JEOPARDY);
   render() {
-    return <button onClick={this.handleClick}>Double Jeopardy</button>;
+    return <button onClick={this.handleClick}>Double Jeopardy!</button>;
   }
 }
 

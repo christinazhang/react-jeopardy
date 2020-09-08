@@ -96,28 +96,45 @@ function AudioPlayer(audioModel) {
   }
 }
 
+const ClueContent = ({ text, image, video, audio }) => (
+  <div>
+    <Clue>{text.toUpperCase()}</Clue>
+    {video && <ClueMedia>{VideoPlayer(video)}</ClueMedia>}
+    {audio && <ClueMedia>{AudioPlayer(audio)}</ClueMedia>}
+    {image && (
+      <ClueMedia>{<ImageContainer src={image.src} alt="clue" />}</ClueMedia>
+    )}
+  </div>
+);
+
 class Overlay extends React.Component {
+  constructor(props) {
+    super(props);
+    let overlays = [];
+    if (this.props.isDailyDouble) {
+      overlays.push({ text: "Daily Double" });
+    }
+    if (this.props.isFinalJeopardy) {
+      overlays.push({ text: this.props.category });
+    }
+    overlays.push({ ...this.props });
+    this.state = { overlays: overlays, activeOverlayIndex: 0 };
+  }
+
   handleClick = () => {
-    this.props.toggleOverlay(false);
+    if (this.state.activeOverlayIndex === this.state.overlays.length - 1) {
+      this.props.toggleOverlay(false);
+    }
+    this.setState({ activeOverlayIndex: this.state.activeOverlayIndex + 1 });
   };
 
   render() {
+    const { overlays, activeOverlayIndex } = this.state;
     return (
       <OverlayContainer onClick={this.handleClick}>
         <OverlayContent>
-          <Clue>{this.props.text.toUpperCase()}</Clue>
-          {this.props.video && (
-            <ClueMedia>{VideoPlayer(this.props.video)}</ClueMedia>
-          )}
-          {this.props.audio && (
-            <ClueMedia>{AudioPlayer(this.props.audio)}</ClueMedia>
-          )}
-          {this.props.image && (
-            <ClueMedia>
-              {<ImageContainer src={this.props.image.src} alt="clue" />}
-            </ClueMedia>
-          )}
-          (Click anywhere to close)
+          {ClueContent({ ...overlays[activeOverlayIndex] })}
+          (Click anywhere to continue)
         </OverlayContent>
       </OverlayContainer>
     );
@@ -126,10 +143,7 @@ class Overlay extends React.Component {
 
 function mapStateToProps(state) {
   return {
-    text: state.overlay.activeClue.text,
-    video: state.overlay.activeClue.video,
-    audio: state.overlay.activeClue.audio,
-    image: state.overlay.activeClue.image,
+    ...state.overlay.activeClue,
   };
 }
 

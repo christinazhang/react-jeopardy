@@ -12,6 +12,8 @@ export const getCurrentCategories = (store) => {
       return store.game.singleJeopardyCategories;
     case DOUBLE_JEOPARDY:
       return store.game.doubleJeopardyCategories;
+    case FINAL_JEOPARDY:
+      return store.game.doubleJeopardyCategories; // So that the board doesn't shrink due to no categories
     default:
       return [];
   }

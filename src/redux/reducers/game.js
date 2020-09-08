@@ -6,13 +6,6 @@ import {
   SET_CLUE_VIEWED,
 } from "../actionTypes";
 
-const initialState = {
-  currentStage: UPLOAD_FILES,
-  contestants: [],
-  singleJeopardyCategories: [],
-  doubleJeopardyCategories: [],
-};
-
 const updateClueViewed = (categories, categoryIndex, clueIndex) =>
   categories.map((category, currentCategoryIndex) => {
     if (currentCategoryIndex !== categoryIndex) return category;
@@ -26,6 +19,39 @@ const updateClueViewed = (categories, categoryIndex, clueIndex) =>
     };
   });
 
+const getRandomCoordinates = (categories) => {
+  const categoryIndex = Math.floor(Math.random() * categories.length);
+  const clues = categories[categoryIndex].clues;
+  const clueIndex = Math.floor(Math.random() * clues.length);
+  return { categoryIndex: categoryIndex, clueIndex: clueIndex };
+};
+
+const setDailyDoubles = (number, categories) => {
+  let result = categories;
+  let dailyDoubleCoordinates = [];
+  for (let i = 0; i < number; i++) {
+    let coordinates = getRandomCoordinates(categories);
+    // Ensure that we are not using duplicate coordinates
+    while (dailyDoubleCoordinates.includes(coordinates)) {
+      coordinates = getRandomCoordinates(categories);
+    }
+    dailyDoubleCoordinates.push(coordinates);
+  }
+  dailyDoubleCoordinates.forEach((coordinate) => {
+    const { categoryIndex, clueIndex } = coordinate;
+    result[categoryIndex].clues[clueIndex].isDailyDouble = true;
+  });
+  return result;
+};
+
+const initialState = {
+  currentStage: UPLOAD_FILES,
+  contestants: [],
+  singleJeopardyCategories: [],
+  doubleJeopardyCategories: [],
+  finalJeopardyClue: {},
+};
+
 export default function (state = initialState, action) {
   switch (action.type) {
     case CHANGE_STAGE:
@@ -36,11 +62,20 @@ export default function (state = initialState, action) {
       };
     case UPLOAD_CONFIG:
       const { config } = action.payload;
+      const singleJeopardyCategories = setDailyDoubles(1, config.jeopardy);
+      const doubleJeopardyCategories = setDailyDoubles(
+        2,
+        config.doubleJeopardy
+      );
       return {
         ...state,
         contestants: config.contestants,
-        singleJeopardyCategories: config.singleJeopardy,
-        doubleJeopardyCategories: config.doubleJeopardy,
+        singleJeopardyCategories: singleJeopardyCategories,
+        doubleJeopardyCategories: doubleJeopardyCategories,
+        finalJeopardyClue: {
+          ...config.finalJeopardy,
+          isFinalJeopardy: true,
+        },
       };
 
     case UPDATE_SCORE:

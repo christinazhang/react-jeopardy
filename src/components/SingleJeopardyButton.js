@@ -7,7 +7,7 @@ import { SINGLE_JEOPARDY } from "../stageTypes";
 class SingleJeopardyButton extends React.Component {
   handleClick = () => this.props.changeStage(SINGLE_JEOPARDY);
   render() {
-    return <button onClick={this.handleClick}>Single Jeopardy</button>;
+    return <button onClick={this.handleClick}>Jeopardy!</button>;
   }
 }
 

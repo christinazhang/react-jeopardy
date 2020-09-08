@@ -10,7 +10,7 @@
     { "name": "Contestant 8", "imgLink": "https://via.placeholder.com/150" }
   ],
 
-  "singleJeopardy": [
+  "jeopardy": [
     {
       "title": "Category 1",
       "clues": [
@@ -233,5 +233,10 @@
         }
       ]
     }
-  ]
+  ],
+
+  "finalJeopardy": {
+    "text": "Test",
+    "category": "Test Category"
+  }
 }
