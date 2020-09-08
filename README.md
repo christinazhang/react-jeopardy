@@ -1,14 +1,20 @@
 # React Jeopardy
 
-Needed a way to host Jeopardy games with my friends with custom clues
+A replacement for the Jeopardy! powerpoint slides when hosting your own local Jeopardy! games
 
-## Support
+## Features
 
-- Video Clues (Local, Google Drive, YouTube)
-- Audio Clues (Local, Google Drive)
-- Image Clues
-- Text Clues (obviously)
-- Scorekeeping
+### Supported Media Types
+
+- 📹 Video Clues (Local, Google Drive, YouTube)
+- 🎧 Audio Clues (Local, Google Drive)
+- 🖼️ Image Clues
+- 📝 Text Clues (obviously)
+
+### Other
+
+- 💯 Scorekeeping
+- 👯 Automatically placed daily doubles
 
 ## Usage
 

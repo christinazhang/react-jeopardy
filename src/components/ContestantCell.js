@@ -33,43 +33,47 @@ const DisplayPicture = styled.img`
   object-fit: cover;
 `;
 
-const WagerEditor = styled.div`
-  border-top: 1px solid #aaa;
-  padding: 12px 4px;
-`;
-const SimpleScoreEditor = styled.div`
+const ScoreEditor = styled.div`
+  margin-top: 8px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
   padding: 12px 4px;
 `;
 
-const ScoreEditor = styled.div`
-  margin-top: 8px;
-  border: 1px solid #aaa;
-  border-radius: 8px;
+const InputModes = styled.div`
+  display: flex;
+  flex-direction: column;
+  text-align: left;
 `;
 
 class ContestantCell extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { wager: 0 };
+    this.state = { wager: 0, selectedOption: "lastClue" };
   }
 
   handleScoreIncrease = () => {
-    this.props.updateScore(this.props.index, this.props.currentClueValue);
+    const value =
+      this.state.selectedOption === "lastClue"
+        ? this.props.currentClueValue
+        : this.state.wager;
+    this.props.updateScore(this.props.index, value);
   };
+
   handleScoreDecrease = () => {
-    this.props.updateScore(this.props.index, -1 * this.props.currentClueValue);
+    const value =
+      this.state.selectedOption === "lastClue"
+        ? this.props.currentClueValue
+        : this.state.wager;
+    this.props.updateScore(this.props.index, -1 * value);
   };
 
   updateWager = (wager) => {
     this.setState({ wager });
   };
 
-  handleCorrectWager = () => {
-    this.props.updateScore(this.props.index, this.state.wager);
-  };
-
-  handleIncorrectWager = () => {
-    this.props.updateScore(this.props.index, -1 * this.state.wager);
+  handleOptionChange = (e) => {
+    this.setState({ selectedOption: e.target.value });
   };
 
   render() {
@@ -81,8 +85,34 @@ class ContestantCell extends React.Component {
         <ScoreLabel score={score}>{formatMoney(score)}</ScoreLabel>
         <Name>{contestant.name}</Name>
         <ScoreEditor>
-          <SimpleScoreEditor>
-            <div>Regular Clue:</div>
+          <InputModes>
+            <label>
+              <input
+                type="radio"
+                value="lastClue"
+                onChange={this.handleOptionChange}
+                checked={this.state.selectedOption === "lastClue"}
+              />
+              Last clue value
+            </label>
+            <label>
+              <input
+                type="radio"
+                value="wager"
+                onChange={this.handleOptionChange}
+                checked={this.state.selectedOption === "wager"}
+              />
+              <input
+                style={{ display: "inline-block" }}
+                placeholder="Wager Amount"
+                type="number"
+                onChange={(e) => this.updateWager(e.target.value)}
+                disabled={!(this.state.selectedOption === "wager")}
+              />
+            </label>
+          </InputModes>
+
+          <div>
             <IconButton
               icon="times-circle"
               iconColor="red"
@@ -95,28 +125,7 @@ class ContestantCell extends React.Component {
               size="lg"
               onClick={this.handleScoreIncrease}
             />
-          </SimpleScoreEditor>
-          <WagerEditor>
-            Wager Clue:
-            <input
-              style={{ display: "block", margin: "0 auto" }}
-              placeholder="Wager Amount"
-              type="number"
-              onChange={(e) => this.updateWager(e.target.value)}
-            />
-            <IconButton
-              icon="times-circle"
-              iconColor="red"
-              size="lg"
-              onClick={this.handleIncorrectWager}
-            />
-            <IconButton
-              icon="check-circle"
-              iconColor="green"
-              size="lg"
-              onClick={this.handleCorrectWager}
-            />
-          </WagerEditor>
+          </div>
         </ScoreEditor>
       </Container>
     );
