@@ -29,4 +29,4 @@ Open http://localhost:3000 to view it in the browser.
 
 See `sampleConfigFile.json` for an example of the config file format to upload.
 
-![Demo Screenshot](Screen Shot 2020-09-07 at 8.04.07 PM.png)
+![Demo Screenshot](screenshot.png)
