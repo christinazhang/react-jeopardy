@@ -1,4 +1,38 @@
 {
+    "contestants": [
+        {
+            "name": "Contestant 1",
+            "imgLink": "https://via.placeholder.com/150"
+        },
+        {
+            "name": "Contestant 2",
+            "imgLink": "https://via.placeholder.com/150"
+        },
+        {
+            "name": "Contestant 3",
+            "imgLink": "https://via.placeholder.com/150"
+        },
+        {
+            "name": "Contestant 4",
+            "imgLink": "https://via.placeholder.com/150"
+        },
+        {
+            "name": "Contestant 5",
+            "imgLink": "https://via.placeholder.com/150"
+        },
+        {
+            "name": "Contestant 6",
+            "imgLink": "https://via.placeholder.com/150"
+        },
+        {
+            "name": "Contestant 7",
+            "imgLink": "https://via.placeholder.com/150"
+        },
+        {
+            "name": "Contestant 8",
+            "imgLink": "https://via.placeholder.com/150"
+        }
+    ],
     "jeopardy": [
         {
             "title": "Old but gold",
@@ -76,7 +110,7 @@
                     "text": "Originally a survival horror video game made in RPG maker, this story is about escaping a haunted school."
                 },
                 {
-                    "text": "He is the person depicted in this image. https://i.kym-cdn.com/entries/icons/original/000/034/167/donny's_theme_cover.png"
+                    "text": "He is the person depicted in this image. "
                 },
                 {
                     "text": "In Japanese, its name means \"right\" since this parasitic alien is attached to the MCs right hand. "
@@ -230,40 +264,6 @@
                     "text": "This story is about a middle school boy named Nishikata who relentlessly teased by a female classmate."
                 }
             ]
-        }
-    ],
-    "contestants": [
-        {
-            "name": "Contestant 1",
-            "imgLink": "https://via.placeholder.com/150"
-        },
-        {
-            "name": "Contestant 2",
-            "imgLink": "https://via.placeholder.com/150"
-        },
-        {
-            "name": "Contestant 3",
-            "imgLink": "https://via.placeholder.com/150"
-        },
-        {
-            "name": "Contestant 4",
-            "imgLink": "https://via.placeholder.com/150"
-        },
-        {
-            "name": "Contestant 5",
-            "imgLink": "https://via.placeholder.com/150"
-        },
-        {
-            "name": "Contestant 6",
-            "imgLink": "https://via.placeholder.com/150"
-        },
-        {
-            "name": "Contestant 7",
-            "imgLink": "https://via.placeholder.com/150"
-        },
-        {
-            "name": "Contestant 8",
-            "imgLink": "https://via.placeholder.com/150"
         }
     ],
     "finalJeopardy": {
