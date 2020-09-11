@@ -14,7 +14,7 @@ const Container = styled.div`
 `;
 
 const ScoreLabel = styled.div`
-  padding: 24px 12px;
+  padding: 5px 5px;
   background-color: #102278;
   color: ${(props) => (props.score >= 0 ? "white" : "red")};
   font-weight: 700;
@@ -24,7 +24,7 @@ const ScoreLabel = styled.div`
 `;
 
 const Name = styled.div`
-  padding: 48px 12px;
+  padding: 5px 5px;
   background-color: #102278;
   color: white;
   border: 8px solid rgba(0, 0, 0, 0.75);
@@ -85,7 +85,7 @@ class ContestantCell extends React.Component {
     const score = contestant.score ?? 0;
     return (
       <Container>
-        <DisplayPicture src={contestant.imgLink}></DisplayPicture>
+        {/* <DisplayPicture src={contestant.imgLink}></DisplayPicture> */}
         <ScoreLabel score={score}>{formatMoney(score)}</ScoreLabel>
         <Name>{contestant.name}</Name>
         <ScoreEditor>
