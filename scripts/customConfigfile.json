@@ -1,0 +1,275 @@
+{
+  "contestants": [
+    { "name": "CCC", "imgLink": "https://via.placeholder.com/150" },
+    { "name": "Derps", "imgLink": "https://via.placeholder.com/150" },
+    { "name": "Gundam", "imgLink": "https://via.placeholder.com/150" },
+    { "name": "Jelly Radish", "imgLink": "https://via.placeholder.com/150" },
+    { "name": "Kerit", "imgLink": "https://via.placeholder.com/150" },
+    { "name": "Niisound", "imgLink": "https://via.placeholder.com/150" },
+    { "name": "Contestant 7", "imgLink": "https://via.placeholder.com/150" },
+    { "name": "Contestant 8", "imgLink": "https://via.placeholder.com/150" }
+  ],
+
+  "jeopardy": [
+    {
+      "title": "Old but gold",
+      "clues": [
+        {
+          "text": "This image represents this super saiyan level. ",
+          "image": {
+            "src": "https://vignette.wikia.nocookie.net/dbmoves/images/c/c4/1924171.jpg/revision/latest/scale-to-width-down/340?cb=20111027070412"
+          }
+        },
+        {
+          "text": "Is the name of this character. ",
+          "image": {
+            "src": "https://upload.wikimedia.org/wikipedia/en/d/d8/Sailor_Jupter_01.jpg"
+          }
+        },
+        {
+          "text": "The origin of the text: \"See you space cowboy\""
+        },
+        {
+          "text": "The popular quote \"Omae wa mo shinderu\" comes from this story."
+        },
+        {
+          "text": "The name of the fourth arc in Berserk, where Guts and his comrades dealing with the aftermath of Griffith's incarnation."
+        }
+      ]
+    },
+    {
+      "title": "Ghibli",
+      "clues": [
+        {
+          "text": "This Ghibli film is about a witch who moves to a new town and uses her flying ability to earn a living."
+        },
+        {
+          "text": "This image is from this ghibli film.",
+		  "image":{
+			"src":"https://www.dia.org/sites/default/files/styles/events_main/public/howl-2.jpg?itok=cVUip4u1"
+		  }
+        },
+        {
+          "text": "This ghibli movie was the first and only hand drawn non-English film to win Best Animated Film at the Academy Awards."
+        },
+        {
+          "text": "The title of the Ghibli movie that includes the following soundtrack.",
+          "audio": {
+            "type": "GOOGLE_DRIVE",
+            "src": "https://drive.google.com/file/d/1tCbx8gXSmNS0VQRDwhSkmTBgugu5erAs/view?usp=sharing"
+          }
+        },
+        {
+          "text": "Despite its current popularity, my neighbour totoro did not perform very well in the box office. It might be attributed in part to the depressing content of this movie, that was released alongside it."
+        }
+      ]
+    },
+    {
+      "title": "Power Overwhelming",
+      "clues": [
+        {
+          "text": "The name of the goddess that summons the main character in the overly cautious hero."
+        },
+        {
+          "text": "In this Korean webtoon, the main character summons shadow soldiers to fight for him as well as help him clear dungeons."
+        },
+        {
+          "text": "This story about a girl called Maple, who maxes her defense stat in a video game because of her fear of pain."
+        },
+        {
+          "text": "This story happens in a world where magic users cast spells with a Casting Assistant Device (CAD)."
+        },
+        {
+          "text": "This gag manga is about a level 99 human hero who signs up to be the next demon king."
+        }
+      ]
+    },
+    {
+      "title": "Send shivers down your spine",
+      "clues": [
+        {
+          "text": "Originally a survival horror video game made in RPG maker, this story is about escaping a haunted school."
+        },
+        {
+          "text": "He is the person depicted in this image.",
+		  "image":{
+			"src":"https://i.kym-cdn.com/entries/icons/original/000/034/167/donny's_theme_cover.png"
+		  }
+
+        },
+        {
+          "text": "In Japanese, its name means \"right\" since this parasitic alien is attached to the MCs right hand. "
+        },
+        {
+          "text": "This dark story about a Diclonius species who is experimented on by humans is written by Lynn Okamoto."
+        },
+        {
+          "text": "This story about is about a transfer student who finds himself in a mystery revolving around students  facing gruesome and senseless deaths."
+        }
+      ]
+    },
+    {
+      "title": "We don't talk about the netflix adaptation",
+      "clues": [
+        {
+          "text": "The \"Hunger games\" is very similar to this manga about junior high students forced to fight each other to the death."
+        },
+        {
+          "text": "The movie \"Edge of tomorrow\" which is about an alien-fighting soldier trapped in a time loop, is based off this story."
+        },
+        {
+          "text": "The 2017 american science action film starring Scarlett Johansson is adapted from this story with the same name."
+        },
+        {
+          "text": "Light’s last name in the Netflix adaptation of Death Note, instead of Yagami."
+        },
+        {
+          "text": "The recent cyberpunk-action movie \"Alita: Battle angel \" is based on this story."
+        }
+      ]
+    }
+  ],
+
+  "doubleJeopardy": [
+    {
+      "title": "Gamers rise up",
+      "clues": [
+        {
+          "text": "This rom-com story is about a boy named Keita who joins his school's gaming club for fun, but is surprised the club is focused on competitive gaming."
+        },
+        {
+          "text": "This is about a young boy and girl who are extremely passionate about old-school arcade style fighting games."
+        },
+        {
+          "text": "The show this character is from",
+          "image":{
+			"src":" https://vignette.wikia.nocookie.net/accelworld/images/9/91/Ash_Roller.png/revision/latest?cb=20180216100606"
+		  }
+        },
+        {
+          "text": "Yugi Muto is to Seto Kaiba as Yusei Fudo is to ____"
+        },
+        {
+          "text": "This Korean webtoon is about a high school student who gets an ability that allows him to treat the world around him like a video game."
+        }
+      ]
+    },
+    {
+      "title": "Never skip the opening",
+      "clues": [
+        {
+          "text": "The show this song is from",
+          "audio": {
+            "type": "GOOGLE_DRIVE",
+            "src": "https://drive.google.com/file/d/1UXtgF7waGQ-QuEn9iml4jSZfa1gy0bGP/view?usp=sharing"
+          }
+        },
+        {
+          "text": "The show this song is from",
+          "audio": {
+            "type": "GOOGLE_DRIVE",
+            "src": "https://drive.google.com/file/d/1e1CZuA9-wnFhyLFrMPG3mOsGSEnykaAr/view?usp=sharing"
+          }
+        },
+        {
+          "text": "The show this song is from",
+          "audio": {
+            "type": "GOOGLE_DRIVE",
+            "src": "https://drive.google.com/file/d/1OxLtLd9FcxRhBS8kqUMlNqLaYvJLGRCq/view?usp=sharing"
+          }
+        },
+        {
+          "text": "The show this song is from",
+          "audio": {
+            "type": "GOOGLE_DRIVE",
+            "src": "https://drive.google.com/file/d/1AJrcUw_k4GhCgTRy6ccOWLO5OsW8nFnr/view?usp=sharing"
+          }
+        },
+        {
+          "text": "The show this song is from",
+          "audio": {
+            "type": "GOOGLE_DRIVE",
+            "src": "https://drive.google.com/file/d/1PhQ7ouQqIIVs_B-_ki98P9bMuT1HzKuF/view?usp=sharing"
+          }
+        }
+      ]
+    },
+    {
+      "title": "Sports",
+      "clues": [
+        {
+          "text": "The opening of this show is called \"History maker\"."
+        },
+        {
+          "text": "This long running series is about a bullied high school student who learns boxing."
+        },
+        {
+          "text": "One of the best selling manga series in history, this manga is about a delinquent who joins a basketball team."
+        },
+        {
+          "text": "This show is often criticized for its avant garde animation style and is centered around two friends who enjoy table tennis."
+        },
+        {
+          "text": "This basketball player from Kuroko no Basket works as a model, and has the power of copying the techniques of his opponents"
+        }
+      ]
+    },
+    {
+      "title": "CGDCT",
+      "clues": [
+        {
+          "text": "These characters are from this show. ",
+          "image":{
+			"src":" https://thicc.mywaifulist.moe/series/140/140.jpg"
+		  }
+        },
+        {
+          "text": "In Lucky Star, the main blue haired character is called this."
+        },
+        {
+          "text": "This story is about four high school girls who are part of a light music club."
+        },
+        {
+          "text": "These characters work for a company that create this product.",
+          "image":{
+			"src":"https://remyfool.files.wordpress.com/2017/09/vlcsnap-2017-09-27-05h40m16s847.jpg"
+		  }
+        },
+        {
+          "text": "This strange character is from this story.",
+          "image":{
+			"src":"https://s3.narvii.com/image/ozue4pmbrmqqpkpf6njsqwtdkwnjy4ki_00.jpg"
+		  }
+        }
+      ]
+    },
+    {
+      "title": "Inject the fluff into my veins",
+      "clues": [
+        {
+          "text": "This story is about a beautiful doll like woman who works as an \"Auto memory doll\" and goes on a journey in self-discovery."
+        },
+        {
+          "text": "This story is about a middle school boy named Nishikata who relentlessly teased by a female classmate."
+        },
+        {
+          "text": "This story is about a 27 year old NEET given a chance to start anew by changing his appearance to a 17 year old high school student."
+        },
+        {
+          "text": "This comedy/romance story is about a cheery girl Hori who becomes friends with a brooding otaku looking boy called Miyamura."
+        },
+        {
+          "text": "The name of this quirky five year old who also has green coloured hair.",
+          "image":{
+			"src":"https://japaneselevelup.com/wp-content/uploads/2013/06/excuses.jpg"
+		  }
+        }
+      ]
+    }
+  ],
+
+  "finalJeopardy": {
+    "text": "This 2012 anime film directed by Mamoru Hosoda follows the story of Hana, a widowed mother left to raise two children with a *wild* side to them.",
+    "category": "Anime Films"
+  }
+}
