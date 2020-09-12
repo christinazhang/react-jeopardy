@@ -6,7 +6,6 @@ csv_filename = sys.argv[1]
 config_name = sys.argv[2]
 
 def readQuestionsFromCSV(filename):
-    #Read from CSV
     questions = []
     with open(csv_filename) as csv_file:
         csv_reader = csv.reader(csv_file, delimiter=',')
@@ -22,7 +21,6 @@ def readQuestionsFromCSV(filename):
     return questions
 
 def getContestants():
-    #Contestant data
     contestants = [
         { "name": "Contestant 1", "imgLink": "https://via.placeholder.com/150" },
         { "name": "Contestant 2", "imgLink": "https://via.placeholder.com/150" },
@@ -59,7 +57,6 @@ questions = readQuestionsFromCSV(csv_filename)
 contestants = getContestants()
 round1_data = getRoundData(questions)
 round2_data = getRoundData(questions)
-#Final jeopardy data
 final_question = questions.pop(0)
 
 data = {}
