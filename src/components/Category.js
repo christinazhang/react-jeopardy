@@ -18,7 +18,8 @@ const Container = styled.div`
   display: flex;
   flex: 1 0 auto;
   flex-direction: column;
-  width: 250px;
+  min-width: 200px;
+  max-width: 250px;
   border: 8px solid rgba(0, 0, 0, 0.75);
   border-right: 0px;
   &:last-child {
